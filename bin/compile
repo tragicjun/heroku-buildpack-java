@@ -16,12 +16,17 @@ ENV_DIR=$3
 
 LOGGER_FLAGS=""
 
-## Modifed by Junz: Use env to get HTTP server URL
-JVM_COMMON_BUILDPACK=${HTTP_SERVER_URL}/jvm-buildpack-common-vjunz.tar.gz
-mkdir -p /tmp/jvm-common
-curl --silent --location $JVM_COMMON_BUILDPACK | tar xzm -C /tmp/jvm-common
-. /tmp/jvm-common/bin/util
-. /tmp/jvm-common/bin/java
+#### Modified by Junz: Move script 'java' and 'util' 
+#### from jvm-buildpack-common-v8.tar.gz to current buildpack
+. $BIN_DIR/util
+. $BIN_DIR/java
+## Modified by Junz: Use env to get HTTP server URL
+#JVM_COMMON_BUILDPACK=${HTTP_SERVER_URL}/jvm-buildpack-common-vjunz.tar.gz
+#mkdir -p /tmp/jvm-common
+#curl --silent --location $JVM_COMMON_BUILDPACK | tar xzm -C /tmp/jvm-common
+#. /tmp/jvm-common/bin/util
+#. /tmp/jvm-common/bin/java
+
 
 export_env_dir $ENV_DIR
 
