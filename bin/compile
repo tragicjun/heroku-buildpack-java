@@ -46,7 +46,9 @@ fi
 mkdir -p $CACHE_DIR
 
 # install JDK
-javaVersion=$(detect_java_version ${BUILD_DIR})
+## Modified by Junz: Below command seems to have problems
+#javaVersion=$(detect_java_version ${BUILD_DIR})
+javaVersion=1.6
 echo -n "-----> Installing OpenJDK ${javaVersion}..."
 install_java ${BUILD_DIR} ${javaVersion}
 jdk_overlay ${BUILD_DIR}
