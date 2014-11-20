@@ -16,4 +16,4 @@ To use this buildpack, type below sample command:
     
 **Note**:
 - Copy this buildpack base directory to "/tmp/buildpacks" in the host
-- Start a HTTP server listening 192.168.59.103:8080 to serve maven and jdk binaries 
+- Start a HTTP server listening 192.168.59.103:8080 to serve maven and jdk binaries, such as "maven-3.2.1.tar.gz" and "jdk/openjdk1.6.0_27.tar.gz"
